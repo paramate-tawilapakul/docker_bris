@@ -1,0 +1,21 @@
+#  docker-compose -f docker-compose.yml config check validate config
+version: '3.7'
+services:
+  ris:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TZ=Asia/Bangkok
+    image: 'risapp:latest'
+    container_name: ris
+    working_dir: /app/
+    ports:
+      - '6001:6001'
+    expose:
+      - '6001'
+    volumes:
+      - c:\apps\ris:/apps/ris/
+      - c:\apps\message:/apps/message
+      - c:\apps\config:/apps/config
+    restart: on-failure

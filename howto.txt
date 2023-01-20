@@ -1,0 +1,8 @@
+#Without logs
+docker-compose up -d --build 
+
+#With logs
+docker-compose up --build
+
+#Stop app
+docker-compose down
