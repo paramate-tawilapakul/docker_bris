@@ -1,14 +1,19 @@
 {
   "name": "ris-server",
-  "version": "1.0.0",
+  "version": "7.0.0",
   "author": "Paramate Tawilapakul",
   "description": "Radiology Information System Server",
   "main": "dist/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node dist/index.js"
+    "start": "pm2 start ecosystem.config.js && pm2 logs --lines 1",
+    "stop": "pm2 stop all && pm2 kill",
+    "reloadall": "pm2 reload all",
+    "logs": "pm2 logs --lines 1",
+    "status": "pm2 status"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "pm2": "^5.2.0"
   }
 }
