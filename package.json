@@ -5,15 +5,10 @@
   "description": "Radiology Information System Server",
   "main": "dist/index.js",
   "scripts": {
-    "start": "pm2 start ecosystem.config.js && pm2 logs",
-    "stop": "pm2 stop all && pm2 kill",
-    "reloadall": "pm2 reload all",
-    "logs": "pm2 logs",
-    "status": "pm2 status"
+    "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "dotenv": "^16.0.0",
-    "pm2": "^5.2.0"
+    "dotenv": "^16.0.0"
   }
 }
